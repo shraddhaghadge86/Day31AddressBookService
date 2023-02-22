@@ -74,3 +74,27 @@ mysql> desc addressbook;
 +-----------+-------------+------+-----+---------+-------+
 7 rows in set (0.01 sec)
 
+*********************************************************************************
+
+//UC-3
+//Ability to insert new Contacts to Address Book
+
+
+mysql> insert into AddressBook( FirstName, LastName, Address,City,Zip,phoneNO, Email) values  ('Anvi','Patil','Palus','Sangli','412310','89965','Anvi@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into AddressBook( FirstName, LastName, Address,City,Zip,phoneNO, Email) values  ('Avadhut','Ghadge','Kolhapur','Kolhapur','400309','9165845682','Avadhut@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+ 
+mysql> insert into AddressBook( FirstName, LastName, Address,City,Zip,phoneNO, Email) values  ('Shraddha','Ghadge','Kalambi','Satara','415512','8605512168','Shraddha@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from AddressBook;
++-----------+----------+----------+----------+--------+------------+--------------------+
+| FirstName | LastName | Address  | City     | Zip    | PhoneNo    | Email              |
++-----------+----------+----------+----------+--------+------------+--------------------+
+| Anvi      | Patil    | Palus    | Sangli   | 412310 | 89965      | Anvi@gmail.com     |
+| Avadhut   | Ghadge   | Kolhapur | Kolhapur | 400309 | 9165845682 | Avadhut@gmail.com  |
+| Shraddha  | Ghadge   | Kalambi  | Satara   | 415512 | 8605512168 | Shraddha@gmail.com |
++-----------+----------+----------+----------+--------+------------+--------------------+
+3 rows in set (0.00 sec)
