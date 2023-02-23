@@ -148,3 +148,46 @@ mysql> select *from addressbook where city = 'sangli';
 | Anvi      | Patil    | Palus   | Sangli | 416310 | 89965   | Anvi@gmail.com |
 +-----------+----------+---------+--------+--------+---------+----------------+
 1 row in set (0.00 sec)
+
+
+
+//UC7
+//Ability to understand the size of address book by City
+
+mysql> select * from addressbook;
++-----------+----------+----------+----------+--------+------------+--------------------+
+| FirstName | LastName | Address  | City     | Zip    | PhoneNo    | Email              |
++-----------+----------+----------+----------+--------+------------+--------------------+
+| Anvi      | Patil    | Palus    | Sangli   | 416310 | 89965      | Anvi@gmail.com     |
+| Shraddha  | Ghadge   | Kalambi  | Satara   | 415512 | 8605512168 | Shraddha@gmail.com |
+| Avadhut   | Ghadge   | Kolhapur | Kolhapur | 400309 | 9165845682 | Avadhut@gmail.com  |
+| Sayali    | Pawar    | Jaipur   | Jaipur   | 302001 | 9125648623 | Sayali@gmail.com   |
++-----------+----------+----------+----------+--------+------------+--------------------+
+4 rows in set (0.00 sec)
+
+mysql> select city from addressbook;
++----------+
+| city     |
++----------+
+| Sangli   |
+| Satara   |
+| Kolhapur |
+| Jaipur   |
++----------+
+4 rows in set (0.00 sec)
+
+mysql> select count(*) from AddressBook where City='satara' ;
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) from AddressBook where City='Pune' ;
++----------+
+| count(*) |
++----------+
+|        0 |
++----------+
+1 row in set (0.00 sec)
