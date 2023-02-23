@@ -120,8 +120,8 @@ mysql> select * from addressbook;
 
 *********************************************************************************
 
-UC-5
-Ability to delete a person using person's name
+//UC-5
+//Ability to delete a person using person's name
 
 mysql> delete from addressbook where FirstName = "Avadhut";
 Query OK, 1 row affected (0.01 sec)
@@ -134,3 +134,17 @@ mysql> select * from addressbook;
 | Shraddha  | Ghadge   | Kalambi | Satara | 415512 | 8605512168 | Shraddha@gmail.com |
 +-----------+----------+---------+--------+--------+------------+--------------------+
 2 rows in set (0.00 sec)
+
+*********************************************************************************
+
+//UC6
+//Ability to Retrieve Person belonging to a City or State from the Address Book
+
+mysql> select *from addressbook where city = 'sangli';
++-----------+----------+---------+--------+--------+---------+----------------+
+| FirstName | LastName | Address | City   | Zip    | PhoneNo | Email
+|
++-----------+----------+---------+--------+--------+---------+----------------+
+| Anvi      | Patil    | Palus   | Sangli | 416310 | 89965   | Anvi@gmail.com |
++-----------+----------+---------+--------+--------+---------+----------------+
+1 row in set (0.00 sec)
