@@ -149,7 +149,7 @@ mysql> select *from addressbook where city = 'sangli';
 +-----------+----------+---------+--------+--------+---------+----------------+
 1 row in set (0.00 sec)
 
-
+*********************************************************************************
 
 //UC7
 //Ability to understand the size of address book by City
@@ -191,3 +191,46 @@ mysql> select count(*) from AddressBook where City='Pune' ;
 |        0 |
 +----------+
 1 row in set (0.00 sec)
+
+*********************************************************************************
+
+//UC8
+//Ability to retrieve entries sorted alphabetically by Person’s name for a given city
+
+mysql> desc addressbook;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| FirstName | varchar(20) | NO   |     | NULL    |       |
+| LastName  | varchar(20) | NO   |     | NULL    |       |
+| Address   | varchar(20) | NO   |     | NULL    |       |
+| City      | varchar(20) | NO   |     | NULL    |       |
+| Zip       | varchar(20) | NO   |     | NULL    |       |
+| PhoneNo   | varchar(20) | NO   |     | NULL    |       |
+| Email     | varchar(20) | NO   |     | NULL    |       |
+| State     | varchar(20) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> select * from addressbook;
++-----------+----------+----------+----------+--------+------------+--------------------+-------+
+| FirstName | LastName | Address  | City     | Zip    | PhoneNo    | Email              | State |
++-----------+----------+----------+----------+--------+------------+--------------------+-------+
+| Anvi      | Patil    | Palus    | Sangli   | 416310 | 89965      | Anvi@gmail.com     | MH    |
+| Shraddha  | Ghadge   | Kalambi  | Satara   | 415512 | 8605512168 | Shraddha@gmail.com | MH    |
+| Avadhut   | Ghadge   | Kolhapur | Kolhapur | 400309 | 9165845682 | Avadhut@gmail.com  | MH    |
+| Sayali    | Pawar    | Jaipur   | Jaipur   | 302001 | 9125648623 | Sayali@gmail.com   | RJ    |
++-----------+----------+----------+----------+--------+------------+--------------------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select * from addressbook order by FirstName ASC;
++-----------+----------+----------+----------+--------+------------+--------------------+-------+
+| FirstName | LastName | Address  | City     | Zip    | PhoneNo    | Email              | State |
++-----------+----------+----------+----------+--------+------------+--------------------+-------+
+| Anvi      | Patil    | Palus    | Sangli   | 416310 | 89965      | Anvi@gmail.com     | MH    |
+| Avadhut   | Ghadge   | Kolhapur | Kolhapur | 400309 | 9165845682 | Avadhut@gmail.com  | MH    |
+| Sayali    | Pawar    | Jaipur   | Jaipur   | 302001 | 9125648623 | Sayali@gmail.com   | RJ    |
+| Shraddha  | Ghadge   | Kalambi  | Satara   | 415512 | 8605512168 | Shraddha@gmail.com | MH    |
++-----------+----------+----------+----------+--------+------------+--------------------+-------+
+4 rows in set (0.00 sec)
+
